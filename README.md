@@ -54,3 +54,18 @@ After downloading, extract the contents into your working folder under `vendor/o
 > 💡 All proprietary blobs belong to **OnePlus**.  
 > 📦 This device tree and related code are adapted from **LineageOS**,  
 > not from *some Indian guy asking for beer donations* in exchange for his crDroid OnePlus ROM `.zip`.
+
+---
+
+## 👥 Credits
+
+
+[![LineageOS](https://raw.githubusercontent.com/LineageOS/branding/master/logo/lineage-logo.png)](https://lineageos.org)
+
+
+This project is based on sources provided by:
+
+
+**LineageOS**  
+Website: [https://lineageos.org](https://lineageos.org)  
+Branding: [https://github.com/LineageOS/branding](https://github.com/LineageOS/branding)
