@@ -33,7 +33,7 @@ Since this repo does **not** contain proprietary vendor blobs, please download t
 
 🔗 [Vendor Blobs - Mega Link](https://mega.nz/file/hZxzhRKQ#LOdLHH1dp64XoD7GztBYnpC4vNygiHbWTIHAoyjy5C8)
 
-After downloading, extract the contents into your working folder under `vendor/oneplus/instantnoodle/`.
+After downloading, extract the contents into your working folder under `vendor/oneplus/`.
 
 ---
 
