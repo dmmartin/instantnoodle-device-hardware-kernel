@@ -13,17 +13,43 @@ hardware/oplus
 
 ## 📥 How to Clone
 
-Clone this repository into your AOSP working directory:
+Clone this repository into a temporary folder if you're using `repo sync`, or merge carefully:
 
 ```bash
-git clone https://github.com/dmmartin/instantnoodle-device-hardware-kernel.git
+git clone https://github.com/dmmartin/instantnoodle-device-hardware-kernel.git ~/temp-noodle
 ```
 
-This will provide:
-- Device-specific files for OnePlus 8
-- Common SM8250 device tree
-- Kernel source for SM8250
-- Required `hardware/oplus` components
+Then manually copy the required folders into your AOSP source tree:
+
+```bash
+cp -r ~/temp-noodle/device/* aosp/device/
+cp -r ~/temp-noodle/kernel/* aosp/kernel/
+cp -r ~/temp-noodle/hardware/* aosp/hardware/
+```
+
+---
+
+### ⚠️ Avoiding Conflict with `repo sync`
+
+If you directly clone into `aosp/`:
+
+```bash
+git clone https://github.com/dmmartin/instantnoodle-device-hardware-kernel.git aosp/
+```
+
+…it will create:
+
+```
+aosp/device/
+aosp/kernel/
+aosp/hardware/
+```
+
+This may **conflict with `repo sync`** if the same folders are defined in your manifest.
+
+#### ✅ Recommended:
+- Use `local_manifests` for safe integration
+- Or manually copy the tree into your source folder as shown above
 
 ---
 
@@ -33,7 +59,35 @@ Since this repo does **not** contain proprietary vendor blobs, please download t
 
 🔗 [Vendor Blobs - Mega Link](https://mega.nz/file/hZxzhRKQ#LOdLHH1dp64XoD7GztBYnpC4vNygiHbWTIHAoyjy5C8)
 
-After downloading, extract the contents into your working folder under `vendor/oneplus/`.
+After downloading, extract the contents into your working folder under:
+
+```
+vendor/oneplus/
+├── sm8250-common/
+├── instantnoodle/  ← (if required by your ROM tree setup)
+```
+
+⚠️ **Note**: This repository does not include `vendor/oneplus/instantnoodle` — only `sm8250-common`.  
+You may need to regenerate or adapt the `instantnoodle` vendor tree using `extract-files.py` or pull from a known ROM base.
+
+---
+
+## 🔧 Setup Instructions
+
+After copying the device tree into `device/oneplus/instantnoodle`, run the following:
+
+```bash
+cd device/oneplus/instantnoodle
+./setup-makefiles.py
+```
+
+This script regenerates key files like `Android.mk`, `Android.bp`, and `BoardConfigVendor.mk`, ensuring they match your current `proprietary-files.txt` list and vendor blob setup.
+
+⚠️ This is **essential**, because after copying the tree, it may contain **broken or stale references** to `vendor/oneplus/instantnoodle` blobs.  
+Running this script will:
+- Re-link or clean up proprietary file references
+- Prevent build errors from missing or mismatched vendor blobs
+- Make your tree ready for `brunch` or `lunch` builds
 
 ---
 
@@ -59,13 +113,12 @@ After downloading, extract the contents into your working folder under `vendor/o
 
 ## 👥 Credits
 
+This project is based on sources and guidance provided by:
 
 [![LineageOS](https://raw.githubusercontent.com/LineageOS/branding/master/logo/lineage-logo.png)](https://lineageos.org)
-
-
-This project is based on sources provided by:
-
 
 **LineageOS**  
 Website: [https://lineageos.org](https://lineageos.org)  
 Branding: [https://github.com/LineageOS/branding](https://github.com/LineageOS/branding)
+
+🤖 **ChatGPT (by OpenAI)** – For guidance, writing help, and motivational tech banter along the way.
