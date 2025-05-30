@@ -1,29 +1,56 @@
-# instantnoodle-device-hardware-kernel
-device hardware and kernel of instantnoodle
+# Instantnoodle Device + Hardware + Kernel Tree
 
+This repository contains the complete **device tree, hardware, and kernel sources** for the OnePlus 8 (`instantnoodle`) – suitable for custom AOSP or LineageOS ROM development.
 
-nstantnoodle-device-tree
+## 📂 Included Sources
 
-this contains the 
-```markdown
-- `device/oneplus/instantnoodle`
--  `device/oneplus/sm8250-common1`
--  `kernel/sm8250`
--  `hardware/oplus`
 ```
-`Clone this repositary into your working directory`
-```markdown
-`git clone https://github.com/dmmartin/instantnoodle-device-hardware-kernel.git`
+device/oneplus/instantnoodle
+device/oneplus/sm8250-common
+kernel/oneplus/sm8250
+hardware/oplus
 ```
-the clone process will download
--  `device/oneplus/instantnoole`
--  `device/oneplus/sm8250-common`
--  `kernel/oneplus/sm8250`
--  `hardware/oplus`
 
-oneplus8 vendor tree (proprietary blobs)
+## 📥 How to Clone
 
-`click the link below to donwload and extract to your working folder`
-```markdown
-https://mega.nz/file/hZxzhRKQ#LOdLHH1dp64XoD7GztBYnpC4vNygiHbWTIHAoyjy5C8
+Clone this repository into your AOSP working directory:
+
+```bash
+git clone https://github.com/dmmartin/instantnoodle-device-hardware-kernel.git
 ```
+
+This will provide:
+- Device-specific files for OnePlus 8
+- Common SM8250 device tree
+- Kernel source for SM8250
+- Required `hardware/oplus` components
+
+---
+
+## 📦 Vendor Blobs (Proprietary)
+
+Since this repo does **not** contain proprietary vendor blobs, please download them separately:
+
+🔗 [Vendor Blobs - Mega Link](https://mega.nz/file/hZxzhRKQ#LOdLHH1dp64XoD7GztBYnpC4vNygiHbWTIHAoyjy5C8)
+
+After downloading, extract the contents into your working folder under `vendor/oneplus/instantnoodle/`.
+
+---
+
+## 💡 Notes
+
+- This tree was tested on AOSP-based ROMs like LineageOS and crDroid.
+- The goal is to provide a clean, buildable starting point for custom ROM development on OnePlus 8.
+- Contributions welcome if you'd like to improve or update this setup!
+
+---
+
+## 🧠 Maintainer
+
+**Denis Martin**  
+🔧 ROM builder, Fedora lover, and smartass sudo whisperer 😄  
+
+> 💬 _"Don't give me beer... I don't need it like some scavengers do."_  
+> 💡 All proprietary blobs belong to **OnePlus**.  
+> 📦 This device tree and related code are adapted from **LineageOS**,  
+> not from *some Indian guy asking for beer donations* in exchange for his crDroid OnePlus ROM `.zip`.
