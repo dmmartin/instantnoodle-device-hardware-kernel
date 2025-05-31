@@ -82,7 +82,7 @@ vendor/
         ├── proprietary/
         └── sm8250-common-vendor.mk
 ```
-✅ Copy this into the corresponding directory, this will will ***complete*** your instantnoodle source tree.
+✅ Copy this into the corresponding directory, this will ***complete*** your instantnoodle source tree.
 ---
 
 ### 🔧 `setup-makefiles.py`
