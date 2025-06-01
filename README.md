@@ -55,36 +55,40 @@ This may **conflict with `repo sync`** if the same folders are defined in your m
 
 ## 📦 Vendor Blobs (Proprietary)
 
-This repository does **not** include proprietary blobs due to licensing restrictions, but you can download a **complete vendor tree** separately:
+
 
 🔗 [Vendor Blobs - Mega Link](https://mega.nz/file/hZxzhRKQ#LOdLHH1dp64XoD7GztBYnpC4vNygiHbWTIHAoyjy5C8)
 
-After downloading and extracting, the vendor directory structure should look like:
+This link will let you download the oneplus_vendor.zip file.
+Download and extract the file to get this contents.
 
 ```
-vendor/oneplus/instantnoodle
-vendor/oneplus/sm8250-common
-```
-```
-vendor/
+vendor
 └── oneplus
     ├── instantnoodle
-    │   ├── Android.bp
-    │   ├── Android.mk
-    │   ├── BoardConfigVendor.mk
-    │   ├── instantnoodle-vendor.mk
-    │   ├── proprietary/
-    │   └── radio/
     └── sm8250-common
-        ├── Android.bp
-        ├── Android.mk
-        ├── BoardConfigVendor.mk
-        ├── proprietary/
-        └── sm8250-common-vendor.mk
 ```
 ✅ Copy this into the corresponding directory, this will ***complete*** your instantnoodle source tree.
 ---
+```
+device
+└── oneplus
+    ├── instantnoodle
+    └── sm8250-common
+hardware
+└── oplus
+kernel
+└── oneplus
+    └── sm8250
 
+***plus the folowing addition**
+
+vendor/
+└── oneplus
+    ├── instantnoodle
+    └── sm8250-common
+```
+---
 ### 🔧 `setup-makefiles.py`
 
 After placing the vendor blobs in `vendor/oneplus/`, run:
